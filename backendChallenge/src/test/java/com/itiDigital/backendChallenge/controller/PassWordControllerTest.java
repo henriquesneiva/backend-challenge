@@ -1,5 +1,6 @@
 package com.itiDigital.backendChallenge.controller;
 
+import com.itiDigital.backendChallenge.domain.MessagePassword;
 import com.itiDigital.backendChallenge.domain.PassWord;
 import com.itiDigital.backendChallenge.service.PassWordService;
 import org.junit.jupiter.api.BeforeEach;
@@ -35,19 +36,19 @@ class PassWordControllerTest {
         assertTrue(true);
     }
 
-//    @Test
-//    void TestPassWordValid() {
-//        when(service.checkPassword(any())).thenReturn( Boolean.TRUE);
-//        final ResponseEntity<String> reponse = controller.checkPassword(new PassWord());
-//        assertEquals(HttpStatus.OK.value(), reponse.getStatusCode().value());
-//    }
-//
-//    @Test
-//    void TestPassWordInvalid() {
-//        when(service.checkPassword(any())).thenReturn( Boolean.FALSE);
-//        final ResponseEntity<String> reponse = controller.checkPassword(new PassWord());
-//        assertEquals(HttpStatus.BAD_REQUEST.value(), reponse.getStatusCode().value());
-//    }
+    @Test
+    void TestPassWordValid() {
+        when(service.checkPassword(any())).thenReturn( Boolean.TRUE);
+        final ResponseEntity<MessagePassword> reponse = controller.checkPassword(new PassWord());
+        assertEquals(HttpStatus.OK.value(), reponse.getStatusCode().value());
+    }
+
+    @Test
+    void TestPassWordInvalid() {
+        when(service.checkPassword(any())).thenReturn( Boolean.FALSE);
+        final ResponseEntity<MessagePassword> reponse = controller.checkPassword(new PassWord());
+        assertEquals(HttpStatus.BAD_REQUEST.value(), reponse.getStatusCode().value());
+    }
 
 
 }
