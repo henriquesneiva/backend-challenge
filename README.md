@@ -23,7 +23,7 @@ Output: Um boolean indicando se a senha é válida.
 * firebase para deploy do frontEnd;
 * Heroku para deploy do backEnd;
 
-## Maneiras de usar da aplicaçõa:
+## Maneiras de usar a aplicaçõa:
 
 ### Primeiro: 
 - entrando no site https://backend-challege.web.app/
