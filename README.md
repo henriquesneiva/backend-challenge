@@ -30,7 +30,7 @@ Output: Um boolean indicando se a senha é válida.
 - colocar a senha no imput e apertar o botão (Validar Senha);
 - em seguida será exibida um pop-up informando se a senha esta valida 
 
-![](img-readm/valid.png)
+![](img-reamd/valid.PNG)
 
 > **Observação:_** Caso a aplicação não apresente um retorno basta aguardar serca de 5 a 10 minutos, estou usando ferramenta gratuita e tem algumas limitações.
 
