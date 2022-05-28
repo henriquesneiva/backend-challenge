@@ -1,8 +1,8 @@
 package com.itiDigital.backendChallenge.controller;
 
 import com.itiDigital.backendChallenge.domain.MessagePassword;
-import com.itiDigital.backendChallenge.domain.PassWord;
-import com.itiDigital.backendChallenge.service.PassWordService;
+import com.itiDigital.backendChallenge.domain.Password;
+import com.itiDigital.backendChallenge.service.PasswordService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,19 +16,19 @@ import static org.mockito.Mockito.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Controller - PassWordController")
+@DisplayName("Controller - PasswordController")
 @ExtendWith(MockitoExtension.class)
-class PassWordControllerTest {
+class PasswordControllerTest {
 
     @Mock
-    private PassWordService service;
+    private PasswordService service;
 
-    private PassWordController controller;
+    private PasswordController controller;
 
     @BeforeEach
     public void setup() {
-        service = mock(PassWordService.class);
-        controller = new PassWordController(service);
+        service = mock(PasswordService.class);
+        controller = new PasswordController(service);
     }
 
     @Test
@@ -39,15 +39,15 @@ class PassWordControllerTest {
     @Test
     void TestPassWordValid() {
         when(service.checkPassword(any())).thenReturn( Boolean.TRUE);
-        final ResponseEntity<MessagePassword> reponse = controller.checkPassword(new PassWord());
-        assertEquals(HttpStatus.OK.value(), reponse.getStatusCode().value());
+        final ResponseEntity<MessagePassword> response = controller.checkPassword(new Password());
+        assertEquals(HttpStatus.OK.value(), response.getStatusCode().value());
     }
 
     @Test
     void TestPassWordInvalid() {
         when(service.checkPassword(any())).thenReturn( Boolean.FALSE);
-        final ResponseEntity<MessagePassword> reponse = controller.checkPassword(new PassWord());
-        assertEquals(HttpStatus.BAD_REQUEST.value(), reponse.getStatusCode().value());
+        final ResponseEntity<MessagePassword> response = controller.checkPassword(new Password());
+        assertEquals(HttpStatus.BAD_REQUEST.value(), response.getStatusCode().value());
     }
 
 

@@ -1,8 +1,8 @@
 package com.itiDigital.backendChallenge.controller;
 
 import com.itiDigital.backendChallenge.domain.MessagePassword;
-import com.itiDigital.backendChallenge.domain.PassWord;
-import com.itiDigital.backendChallenge.service.PassWordService;
+import com.itiDigital.backendChallenge.domain.Password;
+import com.itiDigital.backendChallenge.service.PasswordService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/check-password")
 @AllArgsConstructor
 @CrossOrigin("*")
-public class PassWordController {
+public class PasswordController {
 
     @Autowired
-    private PassWordService service;
+    private PasswordService service;
 
     @PostMapping()
-    public ResponseEntity<MessagePassword> checkPassword(@RequestBody PassWord passWord) {
-        var response = service.checkPassword(passWord);
+    public ResponseEntity<MessagePassword> checkPassword(@RequestBody Password password) {
+        boolean response = service.checkPassword(password);
         if (!response) {
             return ResponseEntity.badRequest().body(new MessagePassword("A senha está Inválida"));
         } else {

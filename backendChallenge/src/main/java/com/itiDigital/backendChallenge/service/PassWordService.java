@@ -1,6 +1,6 @@
 package com.itiDigital.backendChallenge.service;
 
-import com.itiDigital.backendChallenge.domain.PassWord;
+import com.itiDigital.backendChallenge.domain.Password;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -8,10 +8,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Service
-public class PassWordService {
+public class PasswordService {
 
-    public Boolean checkPassword(PassWord passWord) {
-        String pswd = passWord.getPassword();
+    public Boolean checkPassword(Password password) {
+        String pswd = password.getPassword();
 
         char[] pswToCharArray = pswd.toCharArray();
         Map<Character, List<?>> map = new HashMap<Character, List<?>>();

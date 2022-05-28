@@ -1,6 +1,6 @@
 package com.itiDigital.backendChallenge.service;
 
-import com.itiDigital.backendChallenge.domain.PassWord;
+import com.itiDigital.backendChallenge.domain.Password;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -8,49 +8,49 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Service - PassWord")
-class PassWordServiceTest {
+class PasswordServiceTest {
 
-    private PassWordService service;
+    private PasswordService service;
 
     @BeforeEach
     void setup() {
-        service = new PassWordService();
+        service = new PasswordService();
     }
 
     @Test
     void TestPassWordValid() {
-        PassWord passWord = new PassWord("AbTp9!fok");
+        Password passWord = new Password("AbTp9!fok");
         assertTrue(service.checkPassword(passWord));
     }
 
     @Test
     void TestPassWordValidCase2() {
-        PassWord passWord = new PassWord("AbTp9!fokl");
-        assertTrue(service.checkPassword(passWord));
+        Password password = new Password("AbTp9!fokl");
+        assertTrue(service.checkPassword(password));
     }
 
     @Test
     void TestPassWordWithoutNumber() {
-        PassWord passWord = new PassWord("AbTpz!fok");
-        assertFalse(service.checkPassword(passWord));
+        Password password = new Password("AbTpz!fok");
+        assertFalse(service.checkPassword(password));
     }
 
     @Test
     void TestPassWordWithoutUppercase() {
-        PassWord passWord = new PassWord("abtpz!fok");
-        assertFalse(service.checkPassword(passWord));
+        Password password = new Password("abtpz!fok");
+        assertFalse(service.checkPassword(password));
     }
 
     @Test
     void TestPassWordWithoutlowercase() {
-        PassWord passWord = new PassWord("ABTP9!FOK");
-        assertFalse(service.checkPassword(passWord));
+        Password password = new Password("ABTP9!FOK");
+        assertFalse(service.checkPassword(password));
     }
 
     @Test
     void TestPassWordWithEmptyApace() {
-        PassWord passWord = new PassWord("AbTp9!fo k");
-        assertFalse(service.checkPassword(passWord));
+        Password password = new Password("AbTp9!fo k");
+        assertFalse(service.checkPassword(password));
     }
 
 }
