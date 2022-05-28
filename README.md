@@ -34,5 +34,5 @@ Output: Um boolean indicando se a senha é válida.
 
 * 2 - clone este repositorio e o repositorio  (https://github.com/henriquesneiva/chalenge-itau-front)
     - abra o backend na sua IDE e execute o comando ``` mvn clean install ``` e em seguida rode o projeto
-    - abra o frontEnd que vocêbaixou e executo o comando ``` npm install ```  e em seguida rode o projeto com o comando ``` ng serve ```
+    - abra o frontEnd que você baixou e executo o comando ``` npm install ```  e em seguida rode o projeto com o comando ``` ng serve ```
     - va no navegador e coloque o seguinte endereço -  http://localhost:4200/
