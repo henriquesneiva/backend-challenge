@@ -20,7 +20,7 @@ public class PasswordController {
 
     @PostMapping()
     public ResponseEntity<MessagePassword> checkPassword(@RequestBody Password password) {
-        boolean response = service.checkPassword(password);
+        boolean response = service.checkPasswordIsValid(password);
         if (!response) {
             return ResponseEntity.badRequest().body(new MessagePassword("A senha está Inválida"));
         } else {

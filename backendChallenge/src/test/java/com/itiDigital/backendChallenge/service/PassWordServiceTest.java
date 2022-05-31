@@ -20,37 +20,37 @@ class PasswordServiceTest {
     @Test
     void TestPassWordValid() {
         Password passWord = new Password("AbTp9!fok");
-        assertTrue(service.checkPassword(passWord));
+        assertTrue(service.checkPasswordIsValid(passWord));
     }
 
     @Test
     void TestPassWordValidCase2() {
         Password password = new Password("AbTp9!fokl");
-        assertTrue(service.checkPassword(password));
+        assertTrue(service.checkPasswordIsValid(password));
     }
 
     @Test
     void TestPassWordWithoutNumber() {
         Password password = new Password("AbTpz!fok");
-        assertFalse(service.checkPassword(password));
+        assertFalse(service.checkPasswordIsValid(password));
     }
 
     @Test
     void TestPassWordWithoutUppercase() {
         Password password = new Password("abtpz!fok");
-        assertFalse(service.checkPassword(password));
+        assertFalse(service.checkPasswordIsValid(password));
     }
 
     @Test
     void TestPassWordWithoutlowercase() {
         Password password = new Password("ABTP9!FOK");
-        assertFalse(service.checkPassword(password));
+        assertFalse(service.checkPasswordIsValid(password));
     }
 
     @Test
     void TestPassWordWithEmptyApace() {
         Password password = new Password("AbTp9!fo k");
-        assertFalse(service.checkPassword(password));
+        assertFalse(service.checkPasswordIsValid(password));
     }
 
 }

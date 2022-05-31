@@ -38,14 +38,14 @@ class PasswordControllerTest {
 
     @Test
     void TestPassWordValid() {
-        when(service.checkPassword(any())).thenReturn( Boolean.TRUE);
+        when(service.checkPasswordIsValid(any())).thenReturn( Boolean.TRUE);
         final ResponseEntity<MessagePassword> response = controller.checkPassword(new Password());
         assertEquals(HttpStatus.OK.value(), response.getStatusCode().value());
     }
 
     @Test
     void TestPassWordInvalid() {
-        when(service.checkPassword(any())).thenReturn( Boolean.FALSE);
+        when(service.checkPasswordIsValid(any())).thenReturn( Boolean.FALSE);
         final ResponseEntity<MessagePassword> response = controller.checkPassword(new Password());
         assertEquals(HttpStatus.BAD_REQUEST.value(), response.getStatusCode().value());
     }
